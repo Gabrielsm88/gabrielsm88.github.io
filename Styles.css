@@ -1,0 +1,148 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1117; /* fundo GitHub dark */
+  color: #c9d1d9; /* texto padrão */
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Foto perfil oval */
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50% / 60%; /* oval */
+  object-fit: cover;
+  border: 3px solid #58a6ff;
+  box-shadow: 0 0 12px #58a6ffaa;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #58a6ff; /* azul GitHub */
+  margin-bottom: 0.2rem;
+}
+
+/* Sobre Mim */
+section.about {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: #161b22;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #30363d;
+}
+
+section.about h2 {
+  color: #58a6ff;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #58a6ff;
+  padding-bottom: 0.3rem;
+}
+
+/* Projetos */
+section.projects {
+  margin-bottom: 3rem;
+}
+
+section.projects h2 {
+  color: #58a6ff;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #58a6ff;
+  padding-bottom: 0.3rem;
+}
+
+.project-card {
+  background: #161b22;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px #30363d;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 14px #58a6ff;
+}
+
+.project-card a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  margin-top: 0.3rem;
+  color: #8b949e;
+}
+
+/* Tech Stack */
+section.tech-stack {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+section.tech-stack h2,
+section.badges-section h2 {
+  color: #8957e5;
+  border-bottom: 1px solid #8957e5;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tech-badges img {
+  vertical-align: middle;
+  margin: 6px 3px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-badges img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px #58a6ff);
+}
+
+/* Badges */
+section.badges-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.badges-container img {
+  margin: 0.5rem;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.badges-container img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px #58a6ff);
+}
+
+/* Links externos */
+a {
+  color: #58a6ff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
