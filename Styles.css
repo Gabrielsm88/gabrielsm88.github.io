@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -20,11 +20,11 @@ header {
   margin-bottom: 3rem;
 }
 
-/* Foto perfil oval */
+/* Foto de perfil */
 .avatar {
   width: 140px;
   height: 140px;
-  border-radius: 50% / 60%; /* oval */
+  border-radius: 50%; /* redondo */
   object-fit: cover;
   border: 3px solid #58a6ff;
   box-shadow: 0 0 12px #58a6ffaa;
@@ -137,6 +137,15 @@ section.badges-section {
   transform: scale(1.1);
   filter: drop-shadow(0 0 6px #58a6ff);
 }
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1rem;
+  color: #8b949e;
+}
+
 
 /* Links externos */
 a {
