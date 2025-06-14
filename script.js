@@ -1,3 +1,10 @@
+document.addEventListener('click', () => {
+  typeSound.play().then(() => {
+    typeSound.pause();
+    typeSound.currentTime = 0;
+  });
+}, { once: true });
+
 // Typing effect com som
 const text = "Técnico de Redes";
 const target = document.getElementById("typing-text");
