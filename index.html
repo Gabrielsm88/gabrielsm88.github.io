@@ -4,120 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gabriel SM - Portfólio</title>
-  <link rel="stylesheet" href="Styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <header class="reveal">
     <img src="./images/avatar.jpg" alt="Foto de Gabriel SM" class="avatar" />
     <h1>Gabriel SM</h1>
     <p id="typing-text"></p>
   </header>
+
   <main>
-  <section class="about">
-    <h2>Sobre Mim</h2>
-    <p>
-      Atualmente focado nos estudos do curso técnico de redes e tecnólogo de segurança da informação
-    </p>
-  </section>
+    <section class="about hidden">
+      <h2>Sobre Mim</h2>
+      <p>
+        Atualmente focado nos estudos do curso técnico de redes e tecnólogo de segurança da informação
+      </p>
+    </section>
 
-  <section class="projects">
-    <h2>Projetos</h2>
+    <section class="projects hidden">
+      <h2>Projetos</h2>
+      <div class="project-card">
+        <a href="https://github.com/Gabrielsm88" target="_blank" rel="noopener noreferrer">
+          Meu GitHub
+        </a>
+        <p>Projetos pessoais, acadêmicos e experimentais.</p>
+      </div>
+    </section>
 
-    <div class="project-card">
-      <a href="https://github.com/Gabrielsm88" target="_blank" rel="noopener noreferrer">
-        Meu GitHub
-      </a>
-      <p>projetos pessoais, projetos acadêmicos e códigos.</p>
-    </div>
+    <section class="tech-stack hidden">
+      <h2>🛠️ Tech Stack</h2>
+      <p align="center">
+        <img src="https://skillicons.dev/icons?i=aws,azure,linux,python,bash,grafana" alt="Ícones Tech Stack" />
+      </p>
+      <div class="tech-badges" align="center">
+        <img src="https://img.shields.io/badge/Azure-blue?style=for-the-badge&logo=microsoft%20azure&logoColor=blue&labelColor=FFFFFF" alt="Azure" />
+        <img src="https://img.shields.io/badge/AWS-000.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
+        <img src="https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+        <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+      </div>
+    </section>
 
-  </section>
-
-  <section class="tech-stack">
-    <h2>🛠️ Tech Stack</h2>
-    <p align="center">
-      <img src="https://skillicons.dev/icons?i=aws,azure,linux,python,bash,grafana" alt="Ícones Tech Stack" />
-    </p>
-    <p align="center" class="tech-badges">
-      <img src="https://img.shields.io/badge/Azure-blue?style=for-the-badge&logo=microsoft%20azure&logoColor=blue&labelColor=FFFFFF" alt="Azure" />
-      <img src="https://img.shields.io/badge/AWS-000.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
-      <img src="https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
-      <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-    </p>
-  </section>
-
-  <section class="badges-section">
-    <h2>Badges</h2>
-    <div class="badges-container" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=Gabrielsm88&show_icons=true&theme=radical" alt="Estatísticas GitHub" />
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Gabrielsm88&theme=radical" alt="Streak GitHub" />
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gabrielsm88&layout=compact&theme=radical" alt="Linguagens Mais Usadas" />
-    </div>
-  </section>
+    <section class="badges-section hidden">
+      <h2>Badges</h2>
+      <div class="badges-container" align="center">
+        <img src="https://github-readme-stats.vercel.app/api?username=Gabrielsm88&show_icons=true&theme=radical" alt="GitHub Stats" />
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=Gabrielsm88&theme=radical" alt="GitHub Streak" />
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gabrielsm88&layout=compact&theme=radical" alt="Top Langs" />
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <ul style="list-style: none; display: flex; justify-content: center; gap: 1rem; padding: 0;">
-      <li><a href="https://www.linkedin.com/in/gabrielsm471329/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="https://github.com/Gabrielsm88" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+  <footer class="hidden">
+    <ul style="list-style: none; display: flex; justify-content: center; gap: 1rem;">
+      <li><a href="https://www.linkedin.com/in/gabrielsm471329/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/Gabrielsm88" target="_blank">GitHub</a></li>
     </ul>
   </footer>
 
-  <script>
-  // Animação de entrada
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section, header, footer");
-
-    sections.forEach((el, i) => {
-      el.style.opacity = 0;
-      el.style.transform = "translateY(40px)";
-      el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
-    });
-
-    setTimeout(() => {
-      sections.forEach(el => {
-        el.style.opacity = 1;
-        el.style.transform = "translateY(0)";
-      });
-    }, 100);
-  });
-
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  document.querySelectorAll('.project-card, .badges-container img').forEach(el => {
-    el.classList.add('hidden');
-    observer.observe(el);
-  });
-</script>
-
-  <script>
-  const text = "Técnico de Redes";
-  const target = document.getElementById("typing-text");
-  const audio = new Audio("sounds/type-key.mp3"); // Caminho para o som
-  let index = 0;
-
-  function type() {
-    if (index < text.length) {
-      target.textContent += text.charAt(index);
-      audio.currentTime = 0; // Reinicia som
-      audio.play();
-      index++;
-    } else {
-      clearInterval(typingInterval);
-    }
-  }
-
-  const typingInterval = setInterval(type, 100);
-</script>
-
-  
+  <script src="script.js"></script>
 </body>
 </html>
