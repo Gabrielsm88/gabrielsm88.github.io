@@ -111,14 +111,14 @@ section.badges-section h2 {
 
 .tech-badges img {
   vertical-align: middle;
-  margin: 6px 3px;
-  transition: transform 0.3s ease;
+  margin: 6px 5px;
+  transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
 
 .tech-badges img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 6px #58a6ff);
+  transform: scale(1.2) rotate(-5deg);
+  filter: drop-shadow(0 0 8px #58a6ff);
 }
 
 /* Badges */
@@ -128,14 +128,14 @@ section.badges-section {
 }
 
 .badges-container img {
-  margin: 0.5rem;
-  cursor: default;
-  transition: transform 0.3s ease;
+  margin: 0.6rem;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 8px;
 }
 
 .badges-container img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 6px #58a6ff);
+  transform: scale(1.05) rotate(1deg);
+  filter: drop-shadow(0 0 8px #8957e5);
 }
 
 footer {
@@ -146,6 +146,15 @@ footer {
   color: #8b949e;
 }
 
+footer a {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+footer a:hover {
+  transform: scale(1.1) rotate(-2deg);
+  color: #ffd700;
+}
 
 /* Links externos */
 a {
@@ -154,4 +163,69 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Fade in inicial */
+body > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+/* Scroll reveal */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Avatar hover animado */
+.avatar:hover {
+  transform: scale(1.05) rotate(1deg);
+  transition: transform 0.4s ease;
+}
+
+#typing-text {
+  font-size: 1.3rem;
+  color: #8b949e;
+  border-right: 2px solid #58a6ff;
+  padding-right: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #58a6ff; }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Exemplo: pulsar tech stack */
+.tech-badges img:hover {
+  animation: pulse 0.6s ease;
 }
