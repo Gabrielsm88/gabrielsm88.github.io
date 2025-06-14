@@ -10,7 +10,7 @@
   <header>
     <img src="./images/avatar.jpg" alt="Foto de Gabriel SM" class="avatar" />
     <h1>Gabriel SM</h1>
-    <p>Técnico de Redes</p>
+    <p id="typing-text"></p>
   </header>
   <main>
   <section class="about">
@@ -61,6 +61,62 @@
       <li><a href="https://github.com/Gabrielsm88" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     </ul>
   </footer>
+
+  <script>
+  // Animação de entrada
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section, header, footer");
+
+    sections.forEach((el, i) => {
+      el.style.opacity = 0;
+      el.style.transform = "translateY(40px)";
+      el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+    });
+
+    setTimeout(() => {
+      sections.forEach(el => {
+        el.style.opacity = 1;
+        el.style.transform = "translateY(0)";
+      });
+    }, 100);
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.project-card, .badges-container img').forEach(el => {
+    el.classList.add('hidden');
+    observer.observe(el);
+  });
+</script>
+
+  <script>
+  const text = "Técnico de Redes";
+  const target = document.getElementById("typing-text");
+  const audio = new Audio("sounds/type-key.mp3"); // Caminho para o som
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      target.textContent += text.charAt(index);
+      audio.currentTime = 0; // Reinicia som
+      audio.play();
+      index++;
+    } else {
+      clearInterval(typingInterval);
+    }
+  }
+
+  const typingInterval = setInterval(type, 100);
+</script>
 
   
 </body>
